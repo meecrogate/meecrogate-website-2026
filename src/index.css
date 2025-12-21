@@ -1,0 +1,119 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 233 234 236; /* #E9EAEC */
+    --foreground: 37 40 46; /* #25282E */
+
+    --card: 233 234 236; /* #E9EAEC */
+    --card-foreground: 37 40 46; /* #25282E */
+
+    --popover: 233 234 236; /* #E9EAEC */
+    --popover-foreground: 37 40 46; /* #25282E */
+
+    --primary: 0 122 255; /* #007AFF */
+    --primary-foreground: 233 234 236; /* #E9EAEC */
+
+    --secondary: 255 179 0; /* #FFB300 */
+    --secondary-foreground: 37 40 46; /* #25282E */
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 37 40 46; /* #25282E */
+
+    --accent: 255 179 0; /* #FFB300 */
+    --accent-foreground: 37 40 46; /* #25282E */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 233 234 236; /* #E9EAEC */
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 0 122 255; /* #007AFF */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 233 234 236; /* #E9EAEC */
+    --sidebar-foreground: 37 40 46; /* #25282E */
+    --sidebar-primary: 0 122 255; /* #007AFF */
+    --sidebar-primary-foreground: 233 234 236; /* #E9EAEC */
+    --sidebar-accent: 255 179 0; /* #FFB300 */
+    --sidebar-accent-foreground: 37 40 46; /* #25282E */
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 0 122 255; /* #007AFF */
+  }
+
+  .dark {
+    --background: 37 40 46; /* #25282E */
+    --foreground: 233 234 236; /* #E9EAEC */
+
+    --card: 37 40 46; /* #25282E */
+    --card-foreground: 233 234 236; /* #E9EAEC */
+
+    --popover: 37 40 46; /* #25282E */
+    --popover-foreground: 233 234 236; /* #E9EAEC */
+
+    --primary: 0 122 255; /* #007AFF */
+    --primary-foreground: 233 234 236; /* #E9EAEC */
+
+    --secondary: 255 179 0; /* #FFB300 */
+    --secondary-foreground: 37 40 46; /* #25282E */
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 233 234 236; /* #E9EAEC */
+
+    --accent: 255 179 0; /* #FFB300 */
+    --accent-foreground: 37 40 46; /* #25282E */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 233 234 236; /* #E9EAEC */
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 0 122 255; /* #007AFF */
+    --sidebar-background: 37 40 46; /* #25282E */
+    --sidebar-foreground: 233 234 236; /* #E9EAEC */
+    --sidebar-primary: 0 122 255; /* #007AFF */
+    --sidebar-primary-foreground: 233 234 236; /* #E9EAEC */
+    --sidebar-accent: 255 179 0; /* #FFB300 */
+    --sidebar-accent-foreground: 37 40 46; /* #25282E */
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 0 122 255; /* #007AFF */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 30px) scale(0.9);
+    }
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+}

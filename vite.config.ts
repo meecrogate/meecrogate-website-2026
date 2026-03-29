@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: '/meecrogate-website-2026/',
+  base: '/',
   plugins: [
     react(),
     mode === 'development' &&

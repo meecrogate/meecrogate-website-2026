@@ -17,9 +17,8 @@ const ContactForm = () => {
     message: ""
   });
 
-  // ⚠️ Remplacez par votre vraie URL générée par Google Apps Script
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/a/macros/yupiik.com/s/AKfycby65aRqZfBTSab4kV8lHI6Wv_CvkKOtRF2-u4MDzxkt4dCF6qWtUdCP_XgUT1dtob6C/exec";
-  
+  // 🔑 Collez votre clé Web3Forms ici :
+  const WEB3FORMS_ACCESS_KEY = "081aaa9f-94c9-4b5b-8688-df70b9f15bb6";
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -34,18 +33,26 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
-          "Content-Type": "text/plain;charset=utf-8",
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        // On envoie directement notre objet formData complet
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          // On personnalise l'objet du mail que vous allez recevoir
+          subject: `[Meecrogate] Nouveau message de ${formData.nom} (${formData.entreprise})`,
+          // On indique à Web3Forms qui envoie le message pour un affichage propre
+          from_name: formData.nom,
+          // Et on injecte tout le reste des champs (nom, email, tel, message, etc.)
+          ...formData
+        }),
       });
 
       const result = await response.json();
 
-      if (result.status === "success") {
+      if (result.success) {
         toast.success("Votre message a bien été envoyé ! Nous vous recontacterons très vite.");
         // On vide le formulaire après succès
         setFormData({
@@ -58,9 +65,11 @@ const ContactForm = () => {
         });
       } else {
         toast.error("Erreur lors de l'envoi du message.");
+        console.error(result);
       }
     } catch (error) {
       toast.error("Impossible de joindre le serveur. Veuillez réessayer plus tard.");
+      console.error(error);
     } finally {
       setIsSubmitting(false);
     }
@@ -85,120 +94,65 @@ const ContactForm = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="nom" className="text-gray-300">
-                Nom complet *
-              </Label>
+              <Label htmlFor="nom" className="text-gray-300">Nom complet *</Label>
               <Input
-                id="nom"
-                name="nom"
-                value={formData.nom}
-                onChange={handleInputChange}
-                required
+                id="nom" name="nom" value={formData.nom} onChange={handleInputChange} required
                 className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                placeholder="Votre nom complet"
-                disabled={isSubmitting}
+                placeholder="Votre nom complet" disabled={isSubmitting}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="entreprise" className="text-gray-300">
-                Entreprise *
-              </Label>
+              <Label htmlFor="entreprise" className="text-gray-300">Entreprise *</Label>
               <Input
-                id="entreprise"
-                name="entreprise"
-                value={formData.entreprise}
-                onChange={handleInputChange}
-                required
+                id="entreprise" name="entreprise" value={formData.entreprise} onChange={handleInputChange} required
                 className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                placeholder="Nom de votre entreprise"
-                disabled={isSubmitting}
+                placeholder="Nom de votre entreprise" disabled={isSubmitting}
               />
             </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-gray-300">
-                Email *
-              </Label>
+              <Label htmlFor="email" className="text-gray-300">Email *</Label>
               <Input
-                id="email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
+                id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required
                 className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                placeholder="votre.email@entreprise.com"
-                disabled={isSubmitting}
+                placeholder="votre.email@entreprise.com" disabled={isSubmitting}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="telephone" className="text-gray-300">
-                Téléphone
-              </Label>
+              <Label htmlFor="telephone" className="text-gray-300">Téléphone</Label>
               <Input
-                id="telephone"
-                name="telephone"
-                type="tel"
-                value={formData.telephone}
-                onChange={handleInputChange}
+                id="telephone" name="telephone" type="tel" value={formData.telephone} onChange={handleInputChange}
                 className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                placeholder="+33 1 23 45 67 89"
-                disabled={isSubmitting}
+                placeholder="+33 1 23 45 67 89" disabled={isSubmitting}
               />
             </div>
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="sujet" className="text-gray-300">
-              Sujet *
-            </Label>
+            <Label htmlFor="sujet" className="text-gray-300">Sujet *</Label>
             <Input
-              id="sujet"
-              name="sujet"
-              value={formData.sujet}
-              onChange={handleInputChange}
-              required
+              id="sujet" name="sujet" value={formData.sujet} onChange={handleInputChange} required
               className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-              placeholder="Objet de votre demande"
-              disabled={isSubmitting}
+              placeholder="Objet de votre demande" disabled={isSubmitting}
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="message" className="text-gray-300">
-              Message *
-            </Label>
+            <Label htmlFor="message" className="text-gray-300">Message *</Label>
             <Textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              required
-              rows={6}
+              id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={6}
               className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-              placeholder="Décrivez votre projet, vos besoins ou vos questions en détail..."
-              disabled={isSubmitting}
+              placeholder="Décrivez votre projet, vos besoins ou vos questions en détail..." disabled={isSubmitting}
             />
           </div>
           
-          <Button
-            type="submit"
-            size="lg"
-            className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white"
-            disabled={isSubmitting}
-          >
+          <Button type="submit" size="lg" className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white" disabled={isSubmitting}>
             {isSubmitting ? (
-              <>
-                <Loader2 className="mr-2 w-5 h-5 animate-spin" />
-                Envoi en cours...
-              </>
+              <><Loader2 className="mr-2 w-5 h-5 animate-spin" /> Envoi en cours...</>
             ) : (
-              <>
-                <Send className="mr-2 w-5 h-5" />
-                Envoyer le message
-              </>
+              <><Send className="mr-2 w-5 h-5" /> Envoyer le message</>
             )}
           </Button>
         </form>

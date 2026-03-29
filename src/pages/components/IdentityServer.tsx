@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Settings, Shield, Users, Key, Lock, Smartphone, ShieldCheck, Link } from "lucide-react";
+import { Settings, Shield, Users, Key, Lock, Smartphone, ShieldCheck } from "lucide-react";
 
 const IdentityServerPage = () => {
   return (

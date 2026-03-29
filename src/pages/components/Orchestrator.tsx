@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Layers, Workflow, RefreshCw, GitBranch, MessageSquare, Activity, Link } from "lucide-react";
+import { Layers, Workflow, RefreshCw, GitBranch, MessageSquare, Activity } from "lucide-react";
 
 const OrchestratorPage = () => {
   return (

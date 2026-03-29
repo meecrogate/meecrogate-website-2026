@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Shield, Zap, BarChart3, Settings, Lock, Globe, Network, Link } from "lucide-react";
+import { Shield, Zap, BarChart3, Settings, Lock, Globe, Network} from "lucide-react";
 
 const ApiGatewayPage = () => {
   return (

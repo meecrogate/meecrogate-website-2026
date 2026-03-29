@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Network, ShieldCheck, Workflow, Zap, Shield, Link } from "lucide-react";
+import { Network, ShieldCheck, Workflow, Zap, Shield } from "lucide-react";
 import componentsHero from "@/assets/components-hero.png";
 
 const ComponentsPage = () => {

@@ -18,7 +18,7 @@ const ContactForm = () => {
   });
 
   // ⚠️ Remplacez par votre vraie URL générée par Google Apps Script
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/a/macros/yupiik.com/s/AKfycbxdoxQ-ExatbykLTNvKVoRwixMUvz_fnUPhH5bCjOEFFzf_h6ZAga1nyZf1_3-k81ZP/exec";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/a/macros/yupiik.com/s/AKfycby65aRqZfBTSab4kV8lHI6Wv_CvkKOtRF2-u4MDzxkt4dCF6qWtUdCP_XgUT1dtob6C/exec";
   
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

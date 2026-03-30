@@ -15,6 +15,7 @@ import Pricing from "./pages/Pricing";
 import Service from "./pages/Service";
 import ComponentsPage from "./pages/Components";
 import ControlStation from "./pages/ControlStation";
+import ScrollToTop from "./components/ScrollTop";
 
 // Use cases individual pages
 import PortailsApiPage from "./pages/usecases/PortailsApi";
@@ -48,6 +49,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <HashRouter>
+        {/* ScrollToTop MUST be inside the Router so it can access useLocation */}
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/features" element={<FeaturesPage />} />

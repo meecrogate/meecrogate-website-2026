@@ -5,7 +5,7 @@ import { Zap, Workflow, Clock, Users, Settings, BarChart3 } from "lucide-react";
 
 const ProcessExecutorPage = () => {
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-slate-900">
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}
@@ -22,11 +22,11 @@ const ProcessExecutorPage = () => {
                   </span>
                 </h1>
                 <p className="text-brand-orange text-xl mb-6">
-                  BPMN & Automatisation
+                  Exection @ Automatisation
                 </p>
                 <p className="text-brand-light/80 text-lg leading-relaxed mb-8">
-                  Moteur d'exécution de processus métier basé sur les standards BPMN 2.0.
-                  Automatisez vos workflows complexes avec une interface graphique intuitive et une traçabilité complète.
+                  Moteur d'exécution de processus non HTTP.
+                  Automatisez vos workflows complexes avec l'emploi de process executor.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
@@ -77,14 +77,14 @@ const ProcessExecutorPage = () => {
         <section className="py-20 px-6 border-t border-brand-light/10">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-brand-light text-center mb-16">
-              Fonctionnalités BPMN complètes
+              Fonctionnalités Process Executor complètes
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Workflow className="w-8 h-8 text-brand-orange mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Designer graphique</h3>
                 <p className="text-brand-light/80">
-                  Interface drag & drop intuitive pour créer et modifier vos processus métier visuellement.
+                  Interface low code pour créer et modifier vos processus visuellement.
                 </p>
               </div>
               <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
@@ -126,44 +126,8 @@ const ProcessExecutorPage = () => {
           </div>
         </section>
 
-        {/* BPMN Elements Section */}
-        <section className="py-20 px-6 border-t border-brand-light/10">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-brand-light text-center mb-16">
-              Éléments BPMN 2.0 supportés
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-brand-orange/15 rounded-xl p-6 text-center border border-brand-orange/20">
-                <div className="w-12 h-12 bg-brand-orange/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <div className="w-6 h-6 bg-brand-orange rounded-full"></div>
-                </div>
-                <h3 className="text-lg font-bold text-brand-light mb-2">Événements</h3>
-                <p className="text-brand-light/70 text-sm">Start, End, Intermediate, Timer, Message</p>
-              </div>
-              <div className="bg-brand-blue/15 rounded-xl p-6 text-center border border-brand-blue/20">
-                <div className="w-12 h-12 bg-brand-blue/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <div className="w-6 h-6 bg-brand-blue rounded"></div>
-                </div>
-                <h3 className="text-lg font-bold text-brand-light mb-2">Activités</h3>
-                <p className="text-brand-light/70 text-sm">User Task, Service Task, Script Task</p>
-              </div>
-              <div className="bg-brand-orange/15 rounded-xl p-6 text-center border border-brand-orange/20">
-                <div className="w-12 h-12 bg-brand-orange/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <div className="w-6 h-6 bg-brand-orange transform rotate-45"></div>
-                </div>
-                <h3 className="text-lg font-bold text-brand-light mb-2">Gateways</h3>
-                <p className="text-brand-light/70 text-sm">Exclusive, Parallel, Inclusive, Event-based</p>
-              </div>
-              <div className="bg-brand-blue/15 rounded-xl p-6 text-center border border-brand-blue/20">
-                <div className="w-12 h-12 bg-brand-blue/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <div className="w-6 h-1 bg-brand-blue"></div>
-                </div>
-                <h3 className="text-lg font-bold text-brand-light mb-2">Flux</h3>
-                <p className="text-brand-light/70 text-sm">Sequence Flow, Message Flow, Association</p>
-              </div>
-            </div>
-          </div>
-        </section>
+      
+        
 
         {/* Use Cases Section */}
         <section className="py-20 px-6 border-t border-brand-light/10">

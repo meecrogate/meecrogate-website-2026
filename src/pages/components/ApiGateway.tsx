@@ -5,7 +5,7 @@ import { Shield, Zap, BarChart3, Settings, Lock, Globe, Network} from "lucide-re
 
 const ApiGatewayPage = () => {
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-slate-900">
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}

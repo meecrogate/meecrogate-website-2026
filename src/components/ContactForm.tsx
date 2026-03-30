@@ -90,7 +90,7 @@ const ContactForm = () => {
       </div>
 
       {/* Formulaire de contact */}
-      <div className="bg-gradient-to-br from-brand-dark/90 to-brand-blue/20 backdrop-blur-sm rounded-3xl border border-gray-700 p-8 max-w-2xl mx-auto">        
+      <div className="bg-gradient-to-br from-slate-900/90 to-brand-blue/20 backdrop-blur-sm rounded-3xl border border-gray-700 p-8 max-w-2xl mx-auto">        
         {isSuccess ? (
           /* --- ÉCRAN DE SUCCÈS --- */
           <div className="text-center py-16 animate-in fade-in zoom-in duration-500">

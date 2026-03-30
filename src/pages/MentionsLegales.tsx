@@ -3,19 +3,19 @@ import Footer from "@/components/Footer";
 
 const MentionsLegales = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-slate-900 overflow-x-hidden">
       <Navigation />
       
-      <main className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold mb-8">Mentions Légales</h1>
+      <div className="pt-16">
+        <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h1 className="text-3xl font-bold mb-8 text-white">Mentions Légales</h1>
           
-          <div className="space-y-8 text-gray-300">
+          <div className="space-y-8 text-slate-300">
             <section>
               <h2 className="text-xl font-semibold text-white mb-4">1. Éditeur du site</h2>
               <p>
                 Le site Meecrogate est édité par :<br />
-                <strong>Meecrogate SAS</strong><br />
+                <strong className="text-white">Meecrogate SAS</strong><br />
                 Société par Actions Simplifiée au capital de [montant] euros<br />
                 Siège social : [Adresse complète]<br />
                 RCS : [Ville] [Numéro RCS]<br />
@@ -85,8 +85,8 @@ const MentionsLegales = () => {
               </p>
             </section>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
       
       <Footer />
     </div>

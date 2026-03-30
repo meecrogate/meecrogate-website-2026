@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Network, ShieldCheck, Workflow, Zap, Shield } from "lucide-react";
+import { Network, ShieldCheck, Workflow, Zap, Shield, Component } from "lucide-react";
 import componentsHero from "@/assets/components-hero.png";
 
 const ComponentsPage = () => {
@@ -79,11 +79,9 @@ const ComponentsPage = () => {
       icon: Zap,
       iconColor: "text-brand-orange",
       title: "Process Executor",
-      subtitle: "BPMN & Automatisation",
-      description: "Moteur d'exécution de processus métier basé sur les standards BPMN pour automatiser vos workflows.",
+      subtitle: "Process Automatisation",
+      description: "Moteur d'exécution de processus pour automatiser vos workflows.",
       features: [
-        "Exécution de processus BPMN 2.0",
-        "Designer graphique de workflows",
         "Tasks automatiques et humaines",
         "Gestion des deadlines et escalations",
         "Intégration avec systèmes externes",
@@ -101,7 +99,7 @@ const ComponentsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-slate-900">
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}
@@ -166,18 +164,22 @@ const ComponentsPage = () => {
                   <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
                     <path
                       d="M32 0 L32 40 M24 32 L32 40 L40 32"
-                      stroke="#9CA3AF"
+                      stroke="#d15325"
                       strokeWidth="3"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <div className="bg-gray-500/20 w-16 h-16 rounded-2xl flex items-center justify-center">
-                    <Workflow className="w-8 h-8 text-gray-400" />
+                  <div
+                    style={{ backgroundColor: '#d78262' }}
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                  >                    
+                    <Component className="w-8 h-8 text-brand-orange" />
                   </div>
+                  
                   <span className="text-brand-light mt-2 text-sm font-medium">Orchestrateur</span>
-                </div>
 
+                </div>
                 {/* Process Executor - Black arrow */}
                 <div className="flex flex-col items-center">
                   <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">

@@ -11,7 +11,7 @@ const ArchitectureCard = ({ point }: { point: typeof architecturePoints[0] }) =>
   return (
     <>
       <Card 
-        className="bg-slate-800/70 border-slate-700/30 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:bg-slate-800/90 hover:scale-[1.01] hover:shadow-lg hover:shadow-indigo-500/20 cursor-pointer"
+        className="bg-slate-800/70 border-slate-900 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:bg-slate-800/90 hover:scale-[1.01] hover:shadow-lg hover:shadow-indigo-500/20 cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setIsDialogOpen(true)}

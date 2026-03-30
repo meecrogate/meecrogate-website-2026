@@ -5,7 +5,7 @@ import { Settings, Shield, Users, Key, Lock, Smartphone, ShieldCheck } from "luc
 
 const IdentityServerPage = () => {
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-slate-900 overflow-x-hidden">
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}

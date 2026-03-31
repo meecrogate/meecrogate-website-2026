@@ -16,8 +16,10 @@ const MentionsLegales = () => {
               <p>
                 Le site Meecrogate est édité par :<br />
                 <strong className="text-white">Meecrogate SAS</strong><br />
-                Société par Actions Simplifiée au capital de [montant] euros<br />
-                Siège social : [Adresse complète]<br />
+                  Société par Actions Simplifiée au capital de [100000] euros<br />
+                  Siège social : 2 A RUE DE LA RÉPUBLIQUE
+                  34160 SAINT-DREZERY
+                <br />
                 RCS : [Ville] [Numéro RCS]<br />
                 SIRET : [Numéro SIRET]<br />
                 TVA Intracommunautaire : [Numéro TVA]
@@ -35,9 +37,7 @@ const MentionsLegales = () => {
               <h2 className="text-xl font-semibold text-white mb-4">3. Hébergement</h2>
               <p>
                 Ce site est hébergé par :<br />
-                [Nom de l'hébergeur]<br />
-                [Adresse de l'hébergeur]<br />
-                [Téléphone de l'hébergeur]
+                [Github]<br />
               </p>
             </section>
 

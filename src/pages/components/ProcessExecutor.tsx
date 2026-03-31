@@ -22,7 +22,7 @@ const ProcessExecutorPage = () => {
                   </span>
                 </h1>
                 <p className="text-brand-orange text-xl mb-6">
-                  Exection @ Automatisation
+                  Execution & Automatisation
                 </p>
                 <p className="text-brand-light/80 text-lg leading-relaxed mb-8">
                   Moteur d'exécution de processus non HTTP.

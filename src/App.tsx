@@ -130,6 +130,7 @@ const App = () => (
       </TooltipProvider>
     </QueryClientProvider>
   </MatomoWrapper>
+  </HelmetProvider>
 );
 
 export default App;

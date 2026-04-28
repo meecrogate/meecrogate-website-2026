@@ -42,13 +42,12 @@ import ProcessExecutorPage from "./pages/components/ProcessExecutor";
 import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
-import { createInstance, MatomoProvider } from '@datapunt/matomo-tracker-react';
+import { createInstance, MatomoProvider, useMatomo } from '@jonkoops/matomo-tracker-react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useMatomo } from '@datapunt/matomo-tracker-react';
+import { HelmetProvider } from 'react-helmet-async';
 
-
-// Modifiez l'initialisation comme ceci :
+// Initialisation de Matomo
 const matomoUrl = import.meta.env.VITE_MATOMO_URL || "https://yupiik.matomo.cloud/";
 const matomoId = Number(import.meta.env.VITE_MATOMO_SITE_ID) || 5;
 
@@ -57,12 +56,7 @@ const instance = createInstance({
   siteId: matomoId,
 });
 
-
-
 const queryClient = new QueryClient();
-
-
-
 
 const MatomoTracker = () => {
   const location = useLocation();
@@ -78,53 +72,52 @@ const MatomoTracker = () => {
   return null;
 };
 
-
 const App = () => (
-  /* @ts-ignore - Ignore l'erreur de type 'children' sur React 18 */
-  <MatomoProvider value={instance}>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <HashRouter>
-          <MatomoTracker /> {/* 2. On suit les changements de routes ici */}
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/features" element={<FeaturesPage />} />
-            <Route path="/comparatifs" element={<ComparatifsPage />} />
-            <Route path="/architecture" element={<ArchitecturePage />} />
-            {/* <Route path="/benefits" element={<BenefitsPage />} /> */} {/* supprimé */}
-            <Route path="/service" element={<Service />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/components" element={<ComponentsPage />} />
-            <Route path="/control-station" element={<ControlStation />} />
-            <Route path="/usecases" element={<UseCasesPage />} />
-            <Route path="/usecases/portails-api" element={<PortailsApiPage />} />
-            <Route path="/usecases/integration-rapide" element={<IntegrationRapidePage />} />
-            <Route path="/usecases/processus-metiers" element={<ProcessusMetiersPage />} />
-            <Route path="/usecases/orchestration" element={<OrchestrationPage />} />
-            <Route path="/usecases/deploiement-hybride" element={<DeploiementHybridePage />} />
-            <Route path="/usecases/standardisation" element={<StandardisationPage />} />
-            <Route path="/projets-clients" element={<ClientProjects />} />
-            <Route path="/projets-clients/bancaire" element={<BancaireCaseStudy />} />
-            <Route path="/projets-clients/ecommerce" element={<EcommerceCaseStudy />} />
-            <Route path="/projets-clients/sante" element={<SanteCaseStudy />} />
-            <Route path="/projets-clients/paris" element={<ParisCaseStudy />} />
-            <Route path="/components/api-gateway" element={<ApiGatewayPage />} />
-            <Route path="/components/identity-server" element={<IdentityServerPage />} />
-            <Route path="/components/orchestrator" element={<OrchestratorPage />} />
-            <Route path="/components/process-executor" element={<ProcessExecutorPage />} />
-            <Route path="/demo" element={<DemoPage />} />
-            <Route path="/mentions-legales" element={<MentionsLegales />} />
-            <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </HashRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </MatomoProvider>
+  <HelmetProvider>
+    <MatomoProvider value={instance}>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <HashRouter>
+            <MatomoTracker /> {/* On suit les changements de routes ici */}
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/features" element={<FeaturesPage />} />
+              <Route path="/comparatifs" element={<ComparatifsPage />} />
+              <Route path="/architecture" element={<ArchitecturePage />} />
+              <Route path="/service" element={<Service />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/components" element={<ComponentsPage />} />
+              <Route path="/control-station" element={<ControlStation />} />
+              <Route path="/usecases" element={<UseCasesPage />} />
+              <Route path="/usecases/portails-api" element={<PortailsApiPage />} />
+              <Route path="/usecases/integration-rapide" element={<IntegrationRapidePage />} />
+              <Route path="/usecases/processus-metiers" element={<ProcessusMetiersPage />} />
+              <Route path="/usecases/orchestration" element={<OrchestrationPage />} />
+              <Route path="/usecases/deploiement-hybride" element={<DeploiementHybridePage />} />
+              <Route path="/usecases/standardisation" element={<StandardisationPage />} />
+              <Route path="/projets-clients" element={<ClientProjects />} />
+              <Route path="/projets-clients/bancaire" element={<BancaireCaseStudy />} />
+              <Route path="/projets-clients/ecommerce" element={<EcommerceCaseStudy />} />
+              <Route path="/projets-clients/sante" element={<SanteCaseStudy />} />
+              <Route path="/projets-clients/paris" element={<ParisCaseStudy />} />
+              <Route path="/components/api-gateway" element={<ApiGatewayPage />} />
+              <Route path="/components/identity-server" element={<IdentityServerPage />} />
+              <Route path="/components/orchestrator" element={<OrchestratorPage />} />
+              <Route path="/components/process-executor" element={<ProcessExecutorPage />} />
+              <Route path="/demo" element={<DemoPage />} />
+              <Route path="/mentions-legales" element={<MentionsLegales />} />
+              <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </HashRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </MatomoProvider>
+  </HelmetProvider>
 );
 
 export default App;

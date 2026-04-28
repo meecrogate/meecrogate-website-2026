@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -86,6 +87,10 @@ const ControlStation = () => {
 
   return (
     <div className="min-h-screen bg-slate-900">
+      <Seo
+        title="Control Station — Pilotage centralisé de votre plateforme API"
+        description="Le Control Station Meecrogate : interface unique pour configurer, surveiller et administrer Gateway, identité, orchestration et processus."
+      />
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}

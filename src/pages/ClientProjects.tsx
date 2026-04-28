@@ -104,6 +104,10 @@ const ClientProjects = () => {
 
   return (
     <div className="min-h-screen bg-slate-900">
+      <Seo
+        title="Projets clients — Témoignages & cas concrets"
+        description="Découvrez comment nos clients (banque, e-commerce, santé, secteur public) utilisent Meecrogate pour moderniser leur plateforme API."
+      />
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}

@@ -87,6 +87,10 @@ const ControlStation = () => {
 
   return (
     <div className="min-h-screen bg-slate-900">
+      <Seo
+        title="Control Station — Pilotage centralisé de votre plateforme API"
+        description="Le Control Station Meecrogate : interface unique pour configurer, surveiller et administrer Gateway, identité, orchestration et processus."
+      />
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}

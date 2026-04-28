@@ -101,6 +101,10 @@ const ComponentsPage = () => {
 
   return (
     <div className="min-h-screen bg-slate-900">
+      <Seo
+        title="Composants — API Gateway, Identité, Orchestrateur"
+        description="Les 4 composants Meecrogate : API Gateway, Serveur d'identité, Orchestrateur et Process Executor. Une architecture modulaire et souveraine."
+      />
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}

@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { Shield, Zap, BarChart3, Settings, Lock, Globe, Network} from "lucide-react";
 
 const ApiGatewayPage = () => {
   return (
     <div className="min-h-screen bg-slate-900">
+      <Seo
+        title="API Gateway — Sécurisation et routage des APIs"
+        description="Le composant API Gateway de Meecrogate : authentification, rate limiting, transformation, cache et observabilité de vos APIs."
+      />
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}

@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { Settings, Shield, Users, Key, Lock, Smartphone, ShieldCheck } from "lucide-react";
 
 const IdentityServerPage = () => {
   return (
     <div className="min-h-screen bg-slate-900 overflow-x-hidden">
+      <Seo
+        title="Serveur d'identité — SSO, OAuth2 & gestion d'accès"
+        description="Le serveur d'identité Meecrogate : SSO, OAuth2, OpenID Connect, MFA et gestion centralisée des utilisateurs et permissions."
+      />
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}

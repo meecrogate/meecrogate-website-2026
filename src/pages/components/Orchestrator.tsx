@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { Layers, Workflow, RefreshCw, GitBranch, MessageSquare, Activity } from "lucide-react";
 
 const OrchestratorPage = () => {
   return (
     <div className="min-h-screen bg-slate-900 overflow-x-hidden">
+      <Seo
+        title="Orchestrateur — Composition d'APIs et de workflows"
+        description="L'orchestrateur Meecrogate : composez des workflows complexes, agrégez plusieurs APIs et gérez les transactions distribuées."
+      />
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}

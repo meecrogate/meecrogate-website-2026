@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { Zap, Workflow, Clock, Users, Settings, BarChart3 } from "lucide-react";
 
 const ProcessExecutorPage = () => {
   return (
     <div className="min-h-screen bg-slate-900">
+      <Seo
+        title="Process Executor — Moteur de processus métier"
+        description="Le Process Executor Meecrogate : automatisez vos workflows métier, tâches humaines et intégrations avec une traçabilité complète."
+      />
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}

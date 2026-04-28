@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { Network, ShieldCheck, Fingerprint, Workflow, Zap, Shield, Component } from "lucide-react";
 import componentsHero from "@/assets/components-hero.png";
 

@@ -32,6 +32,10 @@ const sovereigntyRows = [
 const ComparatifsPage = () => {
   return (
     <div className="min-h-screen bg-slate-900">
+      <Seo
+        title="Comparatifs — Meecrogate vs Gravitee, Kong, Apigee"
+        description="Comparatif détaillé entre Meecrogate, Gravitee, Kong/APISIX et les API Gateways cloud (Apigee, AWS) : technique, souveraineté et auditabilité."
+      />
       <Navigation />
       <div className="pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">

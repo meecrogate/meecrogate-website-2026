@@ -46,6 +46,7 @@ import { createInstance, MatomoProvider } from '@datapunt/matomo-tracker-react';
 import { useEffect, type ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
+import { HelmetProvider } from 'react-helmet-async';
 
 const matomoUrl = import.meta.env.VITE_MATOMO_URL as string;
 const matomoSiteId = import.meta.env.VITE_MATOMO_SITE_ID;
@@ -84,6 +85,7 @@ const MatomoWrapper = ({ children }: { children: ReactNode }) => {
 };
 
 const App = () => (
+  <HelmetProvider>
   <MatomoWrapper>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

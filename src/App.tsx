@@ -43,7 +43,7 @@ import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
 import { createInstance, MatomoProvider, useMatomo } from '@jonkoops/matomo-tracker-react';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -60,14 +60,19 @@ const queryClient = new QueryClient();
 
 const MatomoTracker = () => {
   const location = useLocation();
-  const { trackPageView } = useMatomo();
+  const { pushInstruction } = useMatomo();
+  const prevUrl = useRef('');
 
   useEffect(() => {
-    // Avec HashRouter, location.pathname contient le chemin après le #
-    // On envoie une URL sans fragment pour que Matomo distingue les pages
-    trackPageView({
-      href: `${window.location.origin}${location.pathname}`,
-    });
+    const currentUrl = `${window.location.origin}${location.pathname}`;
+
+    pushInstruction('setReferrerUrl', prevUrl.current);
+    pushInstruction('setCustomUrl', currentUrl);
+    pushInstruction('setDocumentTitle', document.title);
+    pushInstruction('trackPageView');
+    pushInstruction('enableLinkTracking');
+
+    prevUrl.current = currentUrl;
   }, [location]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return null;

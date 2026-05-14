@@ -63,11 +63,12 @@ const MatomoTracker = () => {
   const { trackPageView } = useMatomo();
 
   useEffect(() => {
-    // On force l'URL complète pour que le HashRouter soit bien interprété
+    // Avec HashRouter, location.pathname contient le chemin après le #
+    // On envoie une URL sans fragment pour que Matomo distingue les pages
     trackPageView({
-      href: window.location.href,
+      href: `${window.location.origin}${location.pathname}`,
     });
-  }, [location, trackPageView]);
+  }, [location]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return null;
 };

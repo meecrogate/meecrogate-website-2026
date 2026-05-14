@@ -160,8 +160,8 @@ const PricingHero = () => {
                             <p className="text-slate-300/90 mb-4 text-lg font-bold">Pour PME/ETI qui passent en production</p>
                             
                             <div className="flex items-baseline justify-center gap-2 mb-4">
-                                <span className="text-xl font-bold text-indigo-200">1 500 - 2 500 €</span>
-                                <span className="text-slate-400 text-sm">HT / mois</span>
+                                <span className="text-xl font-bold text-indigo-200">2 600 €</span>
+                                <span className="text-slate-400 text-sm">HT / mois (facturation annuelle)</span>
                             </div>
                             
                             <div className="mb-4 text-left">
@@ -169,7 +169,11 @@ const PricingHero = () => {
                                 <ul className="space-y-2 text-slate-200 text-sm">
                                     <li className="flex items-start">
                                         <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Sécuriser 10–20 APIs
+                                        Jusqu'à 25 APIs
+                                    </li>
+                                    <li className="flex items-start">
+                                        <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
+                                        10 orchestrateurs
                                     </li>
                                     <li className="flex items-start">
                                         <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
@@ -182,7 +186,7 @@ const PricingHero = () => {
                                    
                                     <li className="flex items-start">
                                         <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Control Station: 3 rôles utilisateurs Builders , rôles "Lecteur" illimités
+                                        Instances de Gateway illimitées
                                     </li>
                                 </ul>
                             </div>
@@ -196,15 +200,15 @@ const PricingHero = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Orchestrateur
+                                        Licences pluriannuelles : 31 200 €/an
                                     </li>
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Process Executor
+                                        3 ans : 28 080 €/an
                                     </li>
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Licences pluriannuelles (18k-30k€/an)
+                                        5 ans : 24 960 €/an
                                     </li>
                                 </ul>
                             </div>
@@ -241,6 +245,10 @@ const PricingHero = () => {
                                     <li className="flex items-start">
                                         <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
                                         SLA sur mesure
+                                    </li>
+                                    <li className="flex items-start">
+                                        <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
+                                        Gestion des Identités: Meecrogate Serveur ID
                                     </li>
                                     <li className="flex items-start">
                                         <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
@@ -310,13 +318,18 @@ const PricingHero = () => {
                             <tbody className="text-slate-200/90">
                                 <tr className="hover:bg-slate-700/50 transition-colors">
                                     <td className="py-3 px-4 border-t border-slate-700">APIs sécurisées</td>
-                                    <td className="py-3 px-4 border-t border-slate-700">10–20</td>
-                                    <td className="py-3 px-4 border-t border-slate-700">sur devis</td>
+                                    <td className="py-3 px-4 border-t border-slate-700">Jusqu'à 25</td>
+                                    <td className="py-3 px-4 border-t border-slate-700">Illimité</td>
+                                </tr>
+                                <tr className="hover:bg-slate-700/50 transition-colors">
+                                    <td className="py-3 px-4 border-t border-slate-700">Orchestrateurs</td>
+                                    <td className="py-3 px-4 border-t border-slate-700">10</td>
+                                    <td className="py-3 px-4 border-t border-slate-700">Illimité</td>
                                 </tr>
                                 <tr className="hover:bg-slate-700/50 transition-colors">
                                     <td className="py-3 px-4 border-t border-slate-700">Instances Gateway</td>
-                                    <td className="py-3 px-4 border-t border-slate-700">4</td>
-                                    <td className="py-3 px-4 border-t border-slate-700">sur devis</td>
+                                    <td className="py-3 px-4 border-t border-slate-700">Illimité</td>
+                                    <td className="py-3 px-4 border-t border-slate-700">Illimité</td>
                                 </tr>
                                 <tr className="hover:bg-slate-700/50 transition-colors">
                                     <td className="py-3 px-4 border-t border-slate-700">Intégration & onboarding</td>
@@ -354,8 +367,8 @@ const PricingHero = () => {
                                     <td className="py-3 px-4 border-t border-slate-700"><span className="text-indigo-400 font-bold">+ Options</span></td>
                                 </tr>
                                 <tr className="hover:bg-slate-700/50 transition-colors">
-                                    <td className="py-3 px-4 border-t border-slate-700 font-bold">Prix (HT / mois)</td>
-                                    <td className="py-3 px-4 border-t border-slate-700 font-bold">1 500 - 2 500 €</td>
+                                    <td className="py-3 px-4 border-t border-slate-700 font-bold">Prix (HT / an)</td>
+                                    <td className="py-3 px-4 border-t border-slate-700 font-bold">31 200 €</td>
                                     <td className="py-3 px-4 border-t border-slate-700 font-bold">Sur demande</td>
                                 </tr>
                             </tbody>
@@ -366,13 +379,9 @@ const PricingHero = () => {
                 {/* Microcopy & FAQ */}
                 <div className="space-y-6">
                     <div className="text-slate-300/80">
-                        <p className="mb-2 text-sm">
-                            <strong className="text-indigo-50">Remarques :</strong> Les prix sont exprimés en <strong>EUR HT / mois</strong>. TVA en sus. 
-                            Engagement mensuel ou annuel (remise de 10% pour engagement 12 mois).
-                        </p>
                         <p className="text-sm">
-                            Dépassements (ex. requêtes, bande passante, APIs supplémentaires) facturés par paliers transparents — 
-                            affichés dans le contrat et le simulateur de prix.
+                            <strong className="text-indigo-50">Remarques :</strong> Les prix sont exprimés en <strong>EUR HT / mois</strong>. TVA en sus.
+                            La facturation est annuelle, engagement sur 1, 3 ou 5 ans.
                         </p>
                     </div>
 
